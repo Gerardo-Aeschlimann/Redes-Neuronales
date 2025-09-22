@@ -1,0 +1,46 @@
+{
+    "input_shape": [28, 28],
+    "preprocess": {"scale": 255.0},
+    "layers": [
+        {
+            "type": "dense",
+            "units": 128,
+            "activation": "relu",
+            "regularizer": {
+                "type": "L2",
+                "lambda": 0.001
+            }
+        },
+        {
+            "type": "dropout",
+            "rate": 0.5
+        },
+        {
+            "type": "dense", 
+            "units": 64,
+            "activation": "relu",
+            "regularizer": {
+                "type": "L1",
+                "lambda": 0.01
+            }
+        },
+        {
+            "type": "dropout",
+            "rate": 0.3
+        },
+        {
+            "type": "dense",
+            "units": 10,
+            "activation": "softmax"
+        }
+    ],
+    "optimizer": {
+        "type": "adam",
+        "params": {
+            "learning_rate": 0.001,
+            "beta1": 0.9,
+            "beta2": 0.999,
+            "epsilon": 1e-8
+        }
+    }
+}

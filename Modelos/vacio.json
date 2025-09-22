@@ -1,0 +1,31 @@
+{
+    "input_shape": [28, 28],
+    "preprocess": {
+        "scale": 255.0
+    },
+    "layers": [
+        {
+            "type": "dense",
+            "units": 128,
+            "activation": "relu",
+            "W": [],
+            "b": []
+        },
+        {
+            "type": "dense",
+            "units": 10,
+            "activation": "softmax",
+            "W": [],
+            "b": []
+        }
+    ],
+    "optimizer": {
+        "type": "adam",
+        "params": {
+            "learning_rate": 0.001,
+            "beta1": 0.9,
+            "beta2": 0.999,
+            "epsilon": 1e-8
+        }
+    }
+}
